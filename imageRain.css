@@ -1,6 +1,4 @@
 .imageRain {
-    /*height:402px;*/
-    /*width:800px;*/
     margin:2em auto;
     position:relative;
 }
@@ -9,15 +7,14 @@
     position:absolute;
     top:0;
     left:0;
-    /*display: none;*/
+}
+
+.imageRainDemoContainer {
+    text-align: center;
 }
 
 .imageRainDemoInput {
     width:3rem;
-}
-
-.imageRainDemoColumn {
-
 }
 
 .imageRainDemoInputContainer {

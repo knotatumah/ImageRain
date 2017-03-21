@@ -715,6 +715,7 @@ class ImageRain
         document.getElementById('bgLayer').addEventListener('click', () => {this.showHideLayers();});
         document.getElementById('spriteLayer').addEventListener('click', () => {this.showHideLayers();});
         document.getElementById('fadeLayer').addEventListener('click', () => {this.showHideLayers();});
+        document.getElementById('irBtnPause').addEventListener('click', () => {this.startStop();});
         document.getElementById('irBtnApply').addEventListener('click', () => {this.updateSettings();});
         document.getElementById('irBtnReset').addEventListener('click', () => {this.reset();});
 
