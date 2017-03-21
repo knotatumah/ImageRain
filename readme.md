@@ -18,7 +18,7 @@ Absolutely! I did this project as a learning experience and I would love to get 
 
 ## <a name="install"></a> Using Image Rain
 
-imageRain.js or the stable minified imageRain.min.js will work on most browsers that support ES6.
+imageRain.js or the stable minified imageRain.x.x.x.min.js will work on most browsers that support ES6.
 
 imageRain-x.x.x-es2015.min.js targets older browsers for maximum compatibility.
 
@@ -128,3 +128,7 @@ If *true*, will start running immediately on page load. When *false* the user mu
 **controls** [boolean] *(default: false)*
 
 Debug / demo controls. If *true* and if controls are present *(see ImageRainControls.html)* then the controls will be populated with current parameters and allow on-the-run control of the animation.
+
+**isClickToRun** [boolean] *(default: true)*
+
+Enable or disable starting or pausing the animation by clicking on the image.

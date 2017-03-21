@@ -22,7 +22,11 @@ class ImageRain
         container.style.position = 'relative';
 
         // Primary means of starting & stopping
-        document.getElementById(settings.container).addEventListener('click', () => { this.startStop(); } );
+        if (settings.isClickToRun)
+        {
+            document.getElementById(settings.container).addEventListener('click', () => { this.startStop(); } );
+            container.style.cursor = 'pointer';
+        }
 
         // Will house canvas elements
         this.canvases = {};
@@ -152,6 +156,11 @@ class ImageRain
             settings.controls = false;
         }
 
+        if (!settings.hasOwnProperty('isClickToRun') || typeof(settings.isClickToRun) !== 'boolean')
+        {
+            settings.isClickToRun = true;
+        }
+
         return true;
     }
 
@@ -180,6 +189,7 @@ class ImageRain
         [
             'fastStart',
             'controls',
+            'isClickToRun',
         ];
 
         // Cast expected numbers as a number. Default checking will worry about the NaNs.
