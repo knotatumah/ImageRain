@@ -29,6 +29,11 @@ Initialize Image Rain by invoking ImageRain:
 
 var = new ImageRain( { parameters } );
 
+
+**Start or stop** by clicking the Image Rain container / background image.
+
+fastStart can be set to auto-start Image Rain as well (see below.)
+
 ## <a name="parameters"></a> Parameters
 
 **container** [string] **required*
