@@ -1,0 +1,46 @@
+.imageRain {
+    /*height:402px;*/
+    /*width:800px;*/
+    margin:2em auto;
+    position:relative;
+}
+
+.imageRainLayer {
+    position:absolute;
+    top:0;
+    left:0;
+    /*display: none;*/
+}
+
+.imageRainDemoInput {
+    width:3rem;
+}
+
+.imageRainDemoColumn {
+
+}
+
+.imageRainDemoInputContainer {
+    display:inline-block;
+    width:15em;
+    text-align: right;
+}
+.imageRainDemoText {
+    display: inline-block;
+    width:30em;
+    text-align: left;
+    padding-left:1em;
+}
+.imageRainDemoControl {
+    margin:0.5em auto;
+}
+.imageRainDemoLayers {
+    display: inline-block;
+    margin:auto 1em;
+}
+.imageRainDemoLayersContainer {
+    margin:auto auto 1.25em auto;
+}
+.imageRainDemoBtn {
+    margin: auto 0.5em;
+}

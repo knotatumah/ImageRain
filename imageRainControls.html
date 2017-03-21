@@ -1,0 +1,50 @@
+<div>
+    <div className="demoLayersContainer">
+        <div><span>Enable or disable layers</span></div>
+        <div className="demoLayers"><label>bg<input id="bgLayer" type="checkbox"/></label></div>
+        <div className="demoLayers"><label>sprite<input id="spriteLayer" type="checkbox"/></label></div>
+        <div className="demoLayers"><label>fade<input id="fadeLayer" type="checkbox"/></label></div>
+    </div>
+    <div>
+        <input className="btn demoBtn" type="button" value="Apply Settings"/>
+        <input className="btn demoBtn" type="button" value="Reset"/>
+    </div>
+    <div>
+        <div className="demoControl">
+            <div className="demoInputContainer"><label>Pixel Scale: <input id="scale" className="demoInput" type="number" min="1" max="1000" /></label></div>
+            <div className="demoText"><span>How many pixels wide is each column?</span></div>
+        </div>
+        <div className="demoControl">
+            <div className="demoInputContainer"><label>Fade Percentage: <input id="fade"  className="demoInput" type="number" min="0" max="1" step="0.1"/></label></div>
+            <div className="demoText"><span>How much background color shows in the end?</span></div>
+        </div>
+        <div className="demoControl">
+            <div className="demoInputContainer"><label>Fade Length: <input id="fadeCount"  className="demoInput" type="number" min="0" max="30" /></label></div>
+            <div className="demoText"><span>How long should it take to reach maximum background color?</span></div>
+        </div>
+        <div className="demoControl">
+            <div className="demoInputContainer"><label>Min Speed: <input id="minSpeed"  className="demoInput" type="number" min="0" max="60" /></label></div>
+            <div className="demoText"><span>Minimum speed a column updates at (based on framerate, approx 60 fps)</span></div>
+        </div>
+        <div className="demoControl">
+            <div className="demoInputContainer"><label>Max Speed: <input id="maxSpeed"  className="demoInput" type="number" min="0" max="60" /></label></div>
+            <div className="demoText"><span>Fastest speed a column updates at, 0 being max (approx 60 fps)</span></div>
+        </div>
+        <div className="demoControl">
+            <div className="demoInputContainer"><label>Start Windup Length: <input id="windup"  className="demoInput" type="number" min="0" max="10" /></label></div>
+            <div className="demoText"><span>How many times will the columns fade in? (requires reset)</span></div>
+        </div>
+        <div className="demoControl">
+            <div className="demoInputContainer"><label>Background Color: <input id="backgroundColor" className="demoInput" type="color" /></label></div>
+            <div className="demoText"><span>The color the columns will inherit.</span></div>
+        </div>
+        <div className="demoControl">
+            <div className="demoInputContainer"><label>Max Frames: <input id="frameSkip"  className="demoInput" type="number" min="1" max="5" /></label></div>
+            <div className="demoText"><span>Maximum number of sprites to attempt to render, increasing column speed.</span></div>
+        </div>
+        <div className="demoControl">
+            <div className="demoInputContainer"><label>Chance: <input id="skipChance"  className="demoInput" type="number" min="0" max="1" step="0.1"/></label></div>
+            <div className="demoText"><span>The chance that at a speed of 0 that a column will skip frames</span></div>
+        </div>
+    </div>
+</div>
