@@ -16,6 +16,11 @@ class ImageRain
         this.isRunning = false;
         if (settings.fastStart) { this.isRunning = true; }
 
+        const container = document.getElementById(settings.container);
+
+        // Styling the container
+        container.style.position = 'relative';
+
         // Primary means of starting & stopping
         document.getElementById(settings.container).addEventListener('click', () => { this.startStop(); } );
 
@@ -262,9 +267,10 @@ class ImageRain
             - Sprite layer
             - Fade layer
         */
-        settings.bgCtx     = this.createCanvas('bgLayer', {styles: {zIndex:1},classes: ['imageRainLayer'],}, {props: {width:settings.canvasWidth, height:settings.canvasHeight,},}, true);
-        settings.spriteCtx = this.createCanvas('spriteLayer', {styles: {zIndex:2},classes: ['imageRainLayer'],}, {props: {width:settings.canvasWidth, height:settings.canvasHeight,},}, true);
-        settings.fadeCtx   = this.createCanvas('fadeLayer', {styles: {zIndex:3},classes: ['imageRainLayer'],}, {props: {width:settings.canvasWidth, height:settings.canvasHeight,},}, true);
+
+        settings.bgCtx     = this.createCanvas('bgLayer', {styles: {position:'absolute', zIndex:1, top:0, left:0}}, {props: {width:settings.canvasWidth, height:settings.canvasHeight,},}, true);
+        settings.spriteCtx = this.createCanvas('spriteLayer', {styles: {position:'absolute', zIndex:2, top:0, left:0}}, {props: {width:settings.canvasWidth, height:settings.canvasHeight,},}, true);
+        settings.fadeCtx   = this.createCanvas('fadeLayer', {styles: {position:'absolute', zIndex:3, top:0, left:0}}, {props: {width:settings.canvasWidth, height:settings.canvasHeight,},}, true);
 
         //Pre-rendering
         this.createBackground();  // Renders the background image
