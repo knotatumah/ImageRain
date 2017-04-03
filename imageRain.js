@@ -118,7 +118,7 @@ class ImageRain
 
         if (!settings.hasOwnProperty('alwaysWindup') || typeof(settings.alwaysWindup) !== 'boolean')
         {
-            settings.alwaysWindup = 0;
+            settings.alwaysWindup = false;
         }
 
         if (!settings.hasOwnProperty('frameSkip') || settings.frameSkip < 0 || isNaN(settings.frameSkip))
@@ -133,7 +133,7 @@ class ImageRain
 
         if (!settings.hasOwnProperty('backgroundColor') || typeof(settings.backgroundColor) !== 'string')
         {
-            settings.backgroundColor = "#fff";
+            settings.backgroundColor = "#000000";
         }
 
         if (!settings.hasOwnProperty('spriteCropX') || settings.spriteCropX < 0 || isNaN(settings.spriteCropX))
@@ -148,7 +148,7 @@ class ImageRain
 
         if (!settings.hasOwnProperty('fastStart') || typeof(settings.fastStart) !== 'boolean')
         {
-            settings.fastStart = false;
+            settings.fastStart = true;
         }
 
         if (!settings.hasOwnProperty('controls') || typeof(settings.controls) !== 'boolean')
@@ -991,7 +991,7 @@ class RainColumn
             this.spriteCtx.globalAlpha = windupIncrements[this.windupCount];
             this.fadeCtx.globalAlpha = windupIncrements[this.windupCount];
 
-            if (this.currentRow === this.settings.frontDraw.rows)
+            if (this.currentRow >= this.settings.frontDraw.rows)
             {
                 this.windupCount = this.windupCount + 1;
                 
