@@ -18,21 +18,41 @@ Absolutely! I did this project as a learning experience and I would love to get 
 
 ## <a name="install"></a> Using Image Rain
 
-imageRain.js or the stable minified imageRain.x.x.x.min.js will work on most browsers that support ES6.
+imageRain.js or the stable minified imageRain.x.x.x.min.js will work on most browsers.
 
-imageRain-x.x.x-es2015.min.js targets older browsers for maximum compatibility.
+imageRain-x.x.x-compatible.min.js targets older browsers for maximum compatibility.
 
 imageRain.css is only necessary if you want to include the debug controls found in imageRainControls.html, useful for quickly trying a variety of settings.
 
-
-Initialize Image Rain by invoking ImageRain:
+Create a new Image Rain object with necessary parameters and Image Rain will automatically start running. *fastStart* can be set to be click-to-start.
 
 var = new ImageRain( { parameters } );
 
+Current Image Rain can only take equal width & height sprites and equal width/height sheets. Consider this example, which has square sprites and equal number of sprites in each direction:
 
-**Start or stop** by clicking the Image Rain container / background image.
+![Example sheet from Google Icons](https://raw.githubusercontent.com/google/material-design-icons/master/sprites/css-sprite/sprite-av-black.png)
 
-fastStart can be set to auto-start Image Rain as well (see below.)
+### The bare-minimum to currently run Image Rain:
+
+```javascript
+var imageRain = new ImageRain({
+        
+    container: "targetDiv",
+    
+    spritesUrl: './targetSpriteSheet.png',
+    
+    backgroundUrl: './targetBackground.jpg',
+    
+    spriteFrameScale: 10, // in pixels, how wide/tall is each frame
+    
+    spriteFrameCount: 12, // how many frames exist vertically or horizontally
+
+});
+```
+### Sample
+
+In the *Sample* directory is a sample sprite sheet, background image, and html file with the most basic setup.
+
 
 ## <a name="parameters"></a> Parameters
 
@@ -105,7 +125,7 @@ The maximum number of frames to attempt to render at a speed of 0 in order to he
 0 to 1, The chance that at speed 0 Image Rain will skip frames. 1 = every time.
 
 
-**backgroundColor** [hex] *(default: #fff)*
+**backgroundColor** [hex] *(default: #000000)
 
 The background color of the columns.
 
@@ -120,7 +140,7 @@ In pixels, will zoom in x*2 pixels on the x-axis when pre-rendering sprites.
 In pixels, will zoom in y*2 pixels on the y-axis when pre-rendering sprites.
 
 
-**fastStart** [boolean] *(default: false)*
+**fastStart** [boolean] *(default: true)*
 
 If *true*, will start running immediately on page load. When *false* the user must click the image to start the animation.
 
