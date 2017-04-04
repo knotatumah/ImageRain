@@ -28,7 +28,7 @@ Create a new Image Rain object with necessary parameters and Image Rain will aut
 
 var = new ImageRain( { parameters } );
 
-Current Image Rain can only take equal width & height sprites and equal width/height sheets. Consider this example, which has square sprites and equal number of sprites in each direction:
+Currently Image Rain can only take equal width & height sprites. Sprite sheets are read vertically to match the vertical motion of the rain. Consider this example:
 
 ![Example sheet from Google Icons](https://raw.githubusercontent.com/google/material-design-icons/master/sprites/css-sprite/sprite-av-black.png)
 
@@ -43,9 +43,7 @@ var imageRain = new ImageRain({
     
     backgroundUrl: './targetBackground.jpg',
     
-    spriteFrameScale: 10, // in pixels, how wide/tall is each frame
-    
-    spriteFrameCount: 12, // how many frames exist vertically or horizontally
+    spriteScale: 10, // in pixels, how wide/tall is each frame
 
 });
 ```
@@ -71,7 +69,7 @@ The url of the background image.
 The url of the sprite sheet to be used.
 
 
-**spriteFrameScale** [integer] **required*
+**spriteScale** [integer] **required*
 
 The pixel dimension of the sprite, currently square-only. (12x12, 32x32, etc..)
 

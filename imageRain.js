@@ -71,10 +71,9 @@ class ImageRain
         if (!settings.hasOwnProperty('container') ||
             !settings.hasOwnProperty('backgroundUrl') ||
             !settings.hasOwnProperty('spritesUrl') ||
-            !settings.hasOwnProperty('spriteFrameCount') ||
-            !settings.hasOwnProperty('spriteFrameScale'))
+            !settings.hasOwnProperty('spriteScale'))
         {
-            console.log('imageRain: Missing parameters! Check for container, backgroundUrl, spritesUrl, spriteFrameCount, and spriteFrameScale');
+            console.log('imageRain: Missing parameters! Check for container, backgroundUrl, spritesUrl, spriteFrameCount, and spriteScale');
             return false;
         }
 
@@ -171,7 +170,7 @@ class ImageRain
 
         const numberProps =
         [
-            'spriteFrameScale',
+            'spriteScale',
             'spriteFrameCount',
             'scale',
             'fade',
@@ -230,11 +229,13 @@ class ImageRain
         {
             /*
                 Determine if the sprite sheet is vertical or horizontal
-                by using the user-provided dimensions (spriteFrameScale.)
+                by using the user-provided dimensions (spriteScale.)
             */
 
-            const width = settings.sprites.width / settings.spriteFrameScale;
-            const height = settings.sprites.height / settings.spriteFrameScale;
+            const width = settings.sprites.width / settings.spriteScale;
+            const height = settings.sprites.height / settings.spriteScale;
+
+            settings.spriteFrameCount = settings.sprites.height/settings.spriteScale;
 
             settings.spriteSheetIsHorizontal = false;
             settings.spriteSheetIsVertical = false;
@@ -403,8 +404,8 @@ class ImageRain
 
         settings.sprite =
         {
-            xScale: settings.spriteFrameScale,
-            yScale: settings.spriteFrameScale,
+            xScale: settings.spriteScale,
+            yScale: settings.spriteScale,
             frameCount: settings.spriteFrameCount - 1,
         }
     }
@@ -991,6 +992,7 @@ class RainColumn
             this.spriteCtx.globalAlpha = windupIncrements[this.windupCount];
             this.fadeCtx.globalAlpha = windupIncrements[this.windupCount];
 
+            // currentRow can be bigger than rows when frameSkip is applied
             if (this.currentRow >= this.settings.frontDraw.rows)
             {
                 this.windupCount = this.windupCount + 1;
